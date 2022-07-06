@@ -1,0 +1,226 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+
+local AntiCheat = Instance.new("TextButton")
+
+--Properties:
+
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local WalkSpeed = Instance.new("TextButton")
+local WSvalue = Instance.new("TextBox")
+local JumpPwr = Instance.new("TextButton")
+local JPvalue = Instance.new("TextBox")
+local ResetWS = Instance.new("TextButton")
+local ResetJP = Instance.new("TextButton")
+local InfYield = Instance.new("TextButton")
+local ClickTP = Instance.new("TextButton")
+local Admin = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.318041265, 0, 0.193390459, 0)
+Frame.Size = UDim2.new(0, 469, 0, 500)
+Frame.Active=true
+Frame.Draggable=true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 469, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansLight
+TextLabel.Text = "Instinct Hub"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+WalkSpeed.Name = "WalkSpeed"
+WalkSpeed.Parent = Frame
+WalkSpeed.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+WalkSpeed.BorderSizePixel = 0
+WalkSpeed.Position = UDim2.new(0.0639658868, 0, 0.209439531, 0)
+WalkSpeed.Size = UDim2.new(0, 200, 0, 50)
+WalkSpeed.Font = Enum.Font.Roboto
+WalkSpeed.Text = "WalkSpeed"
+WalkSpeed.TextColor3 = Color3.fromRGB(0, 0, 0)
+WalkSpeed.TextScaled = true
+WalkSpeed.TextSize = 14.000
+WalkSpeed.TextWrapped = true
+WalkSpeed.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = WSvalue.Text
+end)
+
+WSvalue.Name = "WSvalue"
+WSvalue.Parent = Frame
+WSvalue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WSvalue.Position = UDim2.new(0.0639658868, 0, 0.356932163, 0)
+WSvalue.Size = UDim2.new(0, 200, 0, 50)
+WSvalue.Font = Enum.Font.SourceSans
+WSvalue.PlaceholderText = "Enter Walkspeed Value"
+WSvalue.Text = ""
+WSvalue.TextColor3 = Color3.fromRGB(0, 0, 0)
+WSvalue.TextSize = 14.000
+
+JumpPwr.Name = "JumpPwr"
+JumpPwr.Parent = Frame
+JumpPwr.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+JumpPwr.BorderSizePixel = 0
+JumpPwr.Position = UDim2.new(0.515991449, 0, 0.209439531, 0)
+JumpPwr.Size = UDim2.new(0, 200, 0, 50)
+JumpPwr.Font = Enum.Font.Roboto
+JumpPwr.Text = "Jump Power"
+JumpPwr.TextColor3 = Color3.fromRGB(0, 0, 0)
+JumpPwr.TextScaled = true
+JumpPwr.TextSize = 14.000
+JumpPwr.TextWrapped = true
+JumpPwr.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = JPvalue.Text
+end)
+
+
+JPvalue.Name = "JPvalue"
+JPvalue.Parent = Frame
+JPvalue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JPvalue.Position = UDim2.new(0.515991449, 0, 0.356932163, 0)
+JPvalue.Size = UDim2.new(0, 200, 0, 50)
+JPvalue.Font = Enum.Font.SourceSans
+JPvalue.PlaceholderText = "Enter Jump Pwr Value"
+JPvalue.Text = ""
+JPvalue.TextColor3 = Color3.fromRGB(0, 0, 0)
+JPvalue.TextSize = 14.000
+
+ResetWS.Name = "ResetWS"
+ResetWS.Parent = Frame
+ResetWS.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+ResetWS.BorderSizePixel = 0
+ResetWS.Position = UDim2.new(0.0639658868, 0, 0.50442481, 0)
+ResetWS.Size = UDim2.new(0, 200, 0, 50)
+ResetWS.Font = Enum.Font.Roboto
+ResetWS.Text = "Reset Walkspeed"
+ResetWS.TextColor3 = Color3.fromRGB(0, 0, 0)
+ResetWS.TextScaled = true
+ResetWS.TextSize = 14.000
+ResetWS.TextWrapped = true
+ResetWS.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+ResetJP.Name = "ResetJP"
+ResetJP.Parent = Frame
+ResetJP.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+ResetJP.BorderSizePixel = 0
+ResetJP.Position = UDim2.new(0.515991449, 0, 0.50442481, 0)
+ResetJP.Size = UDim2.new(0, 200, 0, 50)
+ResetJP.Font = Enum.Font.Roboto
+ResetJP.Text = "Reset JumpPower"
+ResetJP.TextColor3 = Color3.fromRGB(0, 0, 0)
+ResetJP.TextScaled = true
+ResetJP.TextSize = 14.000
+ResetJP.TextWrapped = true
+ResetJP.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+InfYield.Name = "InfYield"
+InfYield.Parent = Frame
+InfYield.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+InfYield.BorderSizePixel = 0
+InfYield.Position = UDim2.new(0.0639658868, 0, 0.653315663, 0)
+InfYield.Size = UDim2.new(0, 200, 0, 50)
+InfYield.Font = Enum.Font.Roboto
+InfYield.Text = "Inf Jump"
+InfYield.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfYield.TextScaled = true
+InfYield.TextSize = 14.000
+InfYield.TextWrapped = true
+InfYield.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/HQsQysa8"),true)()
+end)
+
+ClickTP.Name = "ClickTP"
+ClickTP.Parent = Frame
+ClickTP.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+ClickTP.BorderSizePixel = 0
+ClickTP.Position = UDim2.new(0.515991449, 0, 0.653315663, 0)
+ClickTP.Size = UDim2.new(0, 200, 0, 50)
+ClickTP.Font = Enum.Font.Roboto
+ClickTP.Text = "Click TP"
+ClickTP.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClickTP.TextScaled = true
+ClickTP.TextSize = 14.000
+ClickTP.TextWrapped = true
+ClickTP.MouseButton1Click:Connect(function()
+	local UIS = game:GetService("UserInputService")
+	local Player = game.Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+
+
+	function GetCharacter()
+		return game.Players.LocalPlayer.Character
+	end
+
+	function Teleport(pos)
+		local Char = GetCharacter()
+		if Char then
+			Char:MoveTo(pos)
+		end
+	end
+
+
+	UIS.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+			Teleport(Mouse.Hit.p)
+		end
+	end)
+	ClickTP.Text = "Loaded!"
+	ClickTP.TextColor3 = Color3.fromRGB(0, 255, 50)
+	wait(2)
+	ClickTP.TextColor3 = Color3.fromRGB(0, 0, 0)
+	ClickTP.Text = "Click TP"
+end)
+
+
+Admin.Name = "Admin"
+Admin.Parent = Frame
+Admin.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+Admin.BorderSizePixel = 0
+Admin.Position = UDim2.new(0.0639658868, 0, 0.799315691, 0)
+Admin.Size = UDim2.new(0, 200, 0, 50)
+Admin.Font = Enum.Font.Roboto
+Admin.Text = "Admin"
+Admin.TextColor3 = Color3.fromRGB(0, 0, 0)
+Admin.TextScaled = true
+Admin.TextSize = 14.000
+Admin.TextWrapped = true
+Admin.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+AntiCheat.Name = "AntiCheat"
+AntiCheat.Parent = Frame
+AntiCheat.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+AntiCheat.BorderSizePixel = 0
+AntiCheat.Position = UDim2.new(0.515991449, 0, 0.799315691, 0)
+AntiCheat.Size = UDim2.new(0, 200, 0, 50)
+AntiCheat.Font = Enum.Font.Roboto
+AntiCheat.Text = "AntiCheat"
+AntiCheat.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiCheat.TextScaled = true
+AntiCheat.TextSize = 14.000
+AntiCheat.TextWrapped = true
+AntiCheat.MouseButton1Click:Connect(function()
+	game:WaitForChild("CoreGui").RobloxGui:WaitForChild("NotificationFrame"):Destroy()
+end)
